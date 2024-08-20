@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-gradient-dark text-white p-0">
+    <div class="navbar navbar-expand-lg nav-container">
+        <div class="inner-navbar-top">
+            <button id="nav-icon4" class="navbar-toggler" type="button" data-toggle="slide"
+                data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <a class="navbar-brand" href="https://www.webqlo.com" rel="Webqlo Home Page">
+                <picture>
+                    <source srcset="https://www.webqlo.com/images/webqlo.webp" type="image/webp">
+                    <img class="nav-logo-img" src="https://www.webqlo.com/images/webqlo.png" alt="WEBQLO Logo"
+                        width="607" height="35" />
+                </picture>
+            </a>
+            <span class="spacer"></span>
+        </div>
+        <div class="main-menu" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0 all-caps">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.webqlo.com/who-we-are" rel="Who We Are Page">Who We Are</a>
+                </li>
+                <li class="nav-item dropdown" [class.show]="isDropdownOpen">
+                    <a class="nav-link d-inline-block" href="https://www.webqlo.com/what-we-do"
+                        rel="What We Do Page">What We Do</a>
+                    <span class="dropdown-toggle" (click)="toggleDropdown()" role="button"></span>
+                    <div class="dropdown-menu bg-gradient-dark first-caps" [class.show]="isDropdownOpen">
+                        <a class="dropdown-item" href="https://www.webqlo.com/integrated-digital-marketing"
+                            rel="Integrated Digital Marketing Page">Integrated Digital Marketing</a>
+                        <a class="dropdown-item" href="https://www.webqlo.com/social-media-marketing"
+                            rel="Social Media Marketing Page">Social Media Marketing</a>
+                        <a class="dropdown-item" href="https://www.webqlo.com/performance-marketing"
+                            rel="Performance Marketing Page">Performance Marketing</a>
+                        <a class="dropdown-item" href="https://www.webqlo.com/social-media-intelligence"
+                            rel="Social Media Intelligence Page">Social Media Intelligence</a>
+                        <a class="dropdown-item" href="https://www.webqlo.com/our-work?type=web-design-and-development"
+                            rel="Web Design & Development Link Page">Web Design & Development</a>
+                        <a class="dropdown-item" href="https://www.webqlo.com/our-work?type=ai-and-data-science"
+                            rel="AI & Data Science Page">AI & Data Science</a>
+                        <a class="dropdown-item" href="https://www.webqlo.com/digital-experiential-marketing"
+                            rel="Digital Experiential Marketing Page">Digital Experiential Marketing</a>
+                        <a class="dropdown-item" href="https://www.webqlo.com/content-marketing"
+                            rel="Content Marketing Page">Content Marketing</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.webqlo.com/our-work" rel="Our Work Page">Our Work</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.webqlo.com/headlines" rel="Headlines Page">Headlines</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.webqlo.com/contact-us" rel="Contact Us Page">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

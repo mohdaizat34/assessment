@@ -1,0 +1,25 @@
+<div class="carousel-container position-relative overflow-hidden">
+
+  <div class="carousel-wrapper d-flex">
+    <div class="carousel-slide position-relative" *ngFor="let slide of slides; let i = index">
+      <div class="image-container"   [ngClass]="{
+        'item-first': i === 0,
+        'item-second': i === 1,
+        'item-third': i === 2
+      }">
+        <img [src]="slide.image" [ngStyle]="getImageStyle(i)" alt="carousel image">
+       
+          <div class="position-absolute top-50 text-content"[ngClass]="{
+            'text-first': i === 0,
+            'text-second': i === 1,
+            'text-third': i === 2
+          }">
+            <h2 class="">{{ slide.title }}</h2>
+            <button class="btn btn-light">{{ slide.buttonLabel }}</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <button class="nav-button prev position-absolute top-50 start-0 translate-middle-y bg-light border-0" (click)="prev()">&#10094;</button>
+  <button class="nav-button next position-absolute top-50 end-0 translate-middle-y bg-light border-0" (click)="next()">&#10095;</button>
+</div>

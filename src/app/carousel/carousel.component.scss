@@ -1,0 +1,123 @@
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center; 
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  position: relative; 
+}
+
+.image-container img {
+  display: block;
+  width: 100%; 
+  height: auto;
+  max-height: 100%; 
+  object-fit: cover; 
+}
+
+.image-container.item-first {
+  background-color: #f6f2f9; 
+  justify-content: end;
+}
+
+
+// Special styles for the third item
+.image-container.item-third {
+  background-color: black; 
+  padding: 5% 10%; /* Responsive padding */
+  align-items: center; 
+  justify-content: center;
+}
+
+
+
+//for text 
+
+.text-first {
+  left: 7%; transform: translateY(-50%);
+  font-family: 'SanfPro', sans-serif; /* Ensure the font is available */
+  font-weight: bold; /* Assuming 'sanfpro-bold' implies a bold weight */
+  font-size: 24px; /* Example size for 'big-title' */
+}
+
+.text-second {
+  left: 20px; /* Example adjustment for the second item */
+  /* Additional styles for the second item */
+}
+
+.text-third {
+  left: 30px; /* Example adjustment for the third item */
+  /* Additional styles for the third item */
+}
+
+
+
+// Overlay content styles
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: white;
+  padding: 1rem; 
+  margin-left: 1rem; 
+  z-index: 1; 
+}
+
+// Navigation button styles
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5); 
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+  .image-container.item-three {
+    padding: 5% 2%; 
+  }
+
+  .nav-button {
+    padding: 8px; 
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .image-container.item-three {
+    padding: 5% 5%; 
+  }
+}
+
+@media (min-width: 1025px) {
+  .image-container.item-three {
+    padding: 5% 10%; 
+  }
+}
