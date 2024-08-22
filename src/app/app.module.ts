@@ -7,6 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CommonModule } from '@angular/common';
+import { OurClientComponent } from './our-client/our-client.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,12 +17,15 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppComponent,
     HomeComponent,
     CarouselComponent,
-    NavbarComponent
+    NavbarComponent,
+    OurClientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CarouselModule
+    CarouselModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

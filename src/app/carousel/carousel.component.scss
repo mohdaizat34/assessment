@@ -1,6 +1,7 @@
 .carousel-container {
   position: relative;
   overflow: hidden;
+  margin-bottom:7%;
 }
 
 .carousel-wrapper {
@@ -12,80 +13,102 @@
 .carousel-slide {
   flex: 0 0 100%;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
+  align-items: center;
+}
+
+
+.image-container.item-third {
+  padding: 0% 0%;
+  background-color: rgb(0, 0, 0);
+  align-items: center;
+  justify-content: center;
 }
 
 .image-container {
   width: 100%;
+  height: 100vh; /* Ensure the container takes full viewport height */
   display: flex;
-  position: relative; 
+  position: relative;
 }
 
+/* Image Styles */
 .image-container img {
-  display: block;
-  width: 100%; 
+  width: 100%; /* Full width */
   height: auto;
-  max-height: 100%; 
-  object-fit: cover; 
+  position: absolute;
+  object-fit: cover; /* Ensure image covers the container */
+  right: 0; /* Align the image to the right */
+  top: 0; /* Align the image to the top */
+  bottom: 0; /* Align the image to the bottom */
+  left: 0; /* Align the image to the left */
 }
 
-.image-container.item-first {
-  background-color: #f6f2f9; 
-  justify-content: end;
+/* Text Content Styles */
+.text-content {
+  position: absolute;
+  bottom: 5%; /* Adjust space from the bottom */
+  left: 7%; /* Adjust for desktop */
+  transform: translateY(-50%);
+  text-align: left; /* Default text alignment for desktop */
+  width: auto; /* Width adjusts based on content */
+  padding: 0 10px; /* Padding to prevent text from touching edges */
 }
 
-
-// Special styles for the third item
-.image-container.item-third {
-  background-color: black; 
-  padding: 5% 10%; /* Responsive padding */
-  align-items: center; 
-  justify-content: center;
+.text-first, .text-second, .text-third {
+  position: relative;
+  margin-bottom: 10px; /* Space between lines of text */
 }
-
-
-
-//for text 
 
 .text-first {
-  left: 7%; transform: translateY(-50%);
-  font-family: 'SanfPro', sans-serif; /* Ensure the font is available */
-  font-weight: bold; /* Assuming 'sanfpro-bold' implies a bold weight */
-  font-size: 24px; /* Example size for 'big-title' */
+  font-size: 1.2em;
 }
 
 .text-second {
-  left: 20px; /* Example adjustment for the second item */
-  /* Additional styles for the second item */
+  font-size: 1em;
 }
 
 .text-third {
-  left: 30px; /* Example adjustment for the third item */
-  /* Additional styles for the third item */
-}
-
-
-
-// Overlay content styles
-.overlay-content {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5); 
+  font-size: 1.3em;
   color: white;
-  padding: 1rem; 
-  margin-left: 1rem; 
-  z-index: 1; 
 }
 
-// Navigation button styles
+/* Button Styling */
+.button-first, .button-second {
+  background: #1d202f;
+  border-bottom: 3px solid #fff;
+  border-left: none !important;
+  border-right: 3px solid #fff;
+  border-top: none !important;
+  box-shadow: 3px 3px 0 0 #1d202f;
+  color: #fff;
+  font-size: 1em;
+  outline: none;
+  padding: 8px 20px;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.button-third {
+  background: #ffffff;
+  border-bottom: 3px solid #000000;
+  border-left: none !important;
+  border-right: 3px solid #000000;
+  border-top: none !important;
+  box-shadow: 3px 3px 0 0 #1d202f;
+  color: #000000;
+  font-size: 1em;
+  outline: none;
+  padding: 8px 20px;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+/* Navigation Button Styles */
 .nav-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.5); 
-  border: none;
   padding: 10px;
   cursor: pointer;
   z-index: 10;
@@ -99,25 +122,52 @@
   right: 10px;
 }
 
-/* Media queries for responsiveness */
-@media (max-width: 600px) {
-  .image-container.item-three {
-    padding: 5% 2%; 
+/* Mobile-specific Adjustments */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .image-container {
+    padding-bottom: 5%; /* Ensure enough space for text and buttons */
   }
 
-  .nav-button {
-    padding: 8px; 
+  .image-container img {
+    height: 100%; /* Ensure image height fills container */
+    width: 100%; /* Ensure image width fills container */
   }
-}
 
-@media (min-width: 601px) and (max-width: 1024px) {
-  .image-container.item-three {
-    padding: 5% 5%; 
+  .image-container.item-third {
+    padding: 2% 0; /* Remove left and right padding on mobile */
   }
-}
 
-@media (min-width: 1025px) {
-  .image-container.item-three {
-    padding: 5% 10%; 
+  .text-content {
+    position: absolute;
+    bottom: 10%; /* Adjust space from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center; /* Center text for mobile */
+    width: 90%; /* Responsive width */
+    padding: 0 10px; /* Padding to prevent text from touching edges */
+  }
+
+  .text-first, .text-second, .text-third {
+    position: relative;
+    margin-bottom: 10px; /* Space between lines of text */
+  }
+
+  .text-first {
+    font-size: 1em;
+  }
+
+  .text-second {
+    font-size: 0.9em;
+  }
+
+  .text-third {
+    font-size: 0.9em;
+  }
+
+  .button-first, .button-second, .button-third {
+    font-size: 1em;
+    padding: 8px 20px;
+    display: block; /* Ensure buttons are block-level */
+    margin: 10px auto; /* Center buttons and add space above */
   }
 }

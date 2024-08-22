@@ -6,7 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  isDropdownOpen: boolean = false;
+  isNavbarCollapsed = true;
+  isDropdownOpen = false;
+
+  toggleNavbar() {
+    this.isNavbarCollapsed = !this.isNavbarCollapsed;
+  }
 
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;

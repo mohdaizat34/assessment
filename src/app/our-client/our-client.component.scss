@@ -1,0 +1,53 @@
+.client-list-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center logos */
+    padding: 10px; /* Adjust padding as needed */
+}
+
+.client-list-slider {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    scroll-snap-type: x mandatory; /* Smooth scrolling */
+}
+
+.client-list-item {
+    flex: 0 0 auto; /* Prevent items from shrinking */
+    width: 150px; /* Adjust width as needed */
+    margin: 10px; /* Spacing between items */
+    scroll-snap-align: center; /* Center items */
+}
+
+.client-list-img-wrapper img {
+    max-width: 100%; /* Responsive image width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+/* For devices with a max-width of 768px (tablets and mobile devices) */
+@media (max-width: 768px) {
+    .client-list-wrapper {
+        padding: 5px; /* Adjust padding for smaller screens */
+    }
+
+    .client-list-slider {
+        flex-direction: column; /* Stack items vertically if needed */
+    }
+
+    .client-list-item {
+        width: 100px; /* Reduce item width for smaller screens */
+        margin: 5px; /* Reduce spacing between items */
+    }
+}
+
+/* For devices with a max-width of 480px (phones) */
+@media (max-width: 480px) {
+    .client-list-wrapper {
+        padding: 0; /* Remove padding if needed */
+    }
+
+    .client-list-item {
+        width: 80px; /* Further reduce item width */
+        margin: 2px; /* Further reduce spacing */
+    }
+}

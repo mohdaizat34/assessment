@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
@@ -9,27 +9,33 @@ export class CarouselComponent implements OnInit {
   slides = [
     {
       image: 'https://www.webqlo.com/images/home-slider/main_banner_3.webp',
-      title: 'Download Free Report in 60 seconds',
-      description: 'Power your digital marketing effort with Adqlo, our proprietary social media intelligence platform.',
-      buttonLabel: 'Learn More'
+      title: 'Download Free Report<br>in 60 seconds',
+      description: '',
+      buttonLabel: 'Download Now'
     },
     {
       image: 'https://www.webqlo.com/images/home-slider/main_banner_2_desktop.png',
-      title: 'Innovative Solutions',
-      description: 'Explore our cutting-edge solutions designed to boost your business.',
-      buttonLabel: 'Discover'
+      title: 'Social Media Intelligence',
+      description: 'Power your digital marketing effort with Adqlo, <br>our proprierty social media intelligence  platform',
+      buttonLabel: 'Discover More'
     },
     {
       image: 'https://www.webqlo.com/images/home-slider/webqlo-slider-webqlorian.jpg',
-      title: 'Advanced Analytics',
-      description: 'Leverage advanced analytics to gain insights and drive success.',
-      buttonLabel: 'Get Started'
+      title: 'Meet the <br>#WEBQLORIANS',
+      description: '',
+      buttonLabel: 'Discover More'
     }
   ];
   currentIndex = 0;
+  isMobile: boolean = window.innerWidth <= 1199;
 
   ngOnInit(): void {
     this.updateCarousel();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.isMobile = window.innerWidth <= 1199;
   }
 
   prev(): void {
@@ -52,11 +58,13 @@ export class CarouselComponent implements OnInit {
   getImageStyle(index: number): { [key: string]: string } {
     switch (index) {
       case 0:
-        return { 'max-width': '60%', 'height': 'auto' };
+        return this.isMobile
+          ? { 'max-width': '100%', 'height': 'auto', 'justify-content':'center' }
+          : { 'max-width': '60%', 'height': '100%', 'margin-left': 'auto' }; // Align image to the right on desktop
       case 1:
         return { 'max-width': '100%', 'height': 'auto' };
       case 2:
-        return { 'max-width': '90%', 'height': 'auto' };
+        return { 'max-width': '90%', 'height': 'auto', 'margin-left':'5%' };
       default:
         return {};
     }

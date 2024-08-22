@@ -2,21 +2,27 @@
 
   <div class="carousel-wrapper d-flex">
     <div class="carousel-slide position-relative" *ngFor="let slide of slides; let i = index">
-      <div class="image-container"   [ngClass]="{
+      <div class="image-container" [ngClass]="{
         'item-first': i === 0,
         'item-second': i === 1,
         'item-third': i === 2
       }">
         <img [src]="slide.image" [ngStyle]="getImageStyle(i)" alt="carousel image">
-       
-          <div class="position-absolute top-50 text-content"[ngClass]="{
-            'text-first': i === 0,
-            'text-second': i === 1,
-            'text-third': i === 2
-          }">
-            <h2 class="">{{ slide.title }}</h2>
-            <button class="btn btn-light">{{ slide.buttonLabel }}</button>
-          </div>
+        
+        <div class="text-content position-absolute" [ngClass]="{
+          'text-first': i === 0,
+          'text-second': i === 1,
+          'text-third': i === 2
+        }">
+          <h2 [innerHTML]="slide.title"></h2>
+          <!-- desc only for slide 2 so I can style here -->
+          <h2 class="mt-4" [ngStyle]="{ 'color': 'rgb(41,73,149)', 'font-size': '20px' }" [innerHTML]="slide.description"></h2> 
+          <button class="shadow-btn mt-4" [ngClass]="{
+            'button-first': i === 0,
+            'button-second': i === 1,
+            'button-third': i === 2
+          }"> {{ slide.buttonLabel }}</button>
+        </div>
       </div>
     </div>
   </div>

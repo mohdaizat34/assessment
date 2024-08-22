@@ -1,3 +1,35 @@
+/* Ensure box-sizing applies to all elements */
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    color: #1d202f;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0;
+    /* Ensure no margin is causing overflow */
+    text-align: left;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+/* Define global link styles */
+a {
+    background-color: transparent;
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Define text colors */
+.text-white {
+    color: #fff !important;
+}
+
+/* Button styling */
 .shadow-btn {
     background: #1d202f;
     border-bottom: 3px solid #fff;
@@ -13,173 +45,298 @@
     transition: all .3s;
 }
 
+/* Font weight for bold text */
 .sanfpro-bold {
     font-weight: 700;
 }
 
+/* Margin auto utility class */
 .m-auto {
     margin: auto !important;
 }
 
+/* Carousel settings */
+.owl-carousel {
+    width: 100%;
+    overflow: hidden;
+    /* Prevent overflow issues */
+}
 
-.m-auto {
-    margin: auto !important;
-}
-a {
-    background-color: transparent;
-    color: #007bff;
-    text-decoration: none;
-}
-*, :after, :before {
-    box-sizing: border-box;
-}
-user agent stylesheet
-a:-webkit-any-link {
-    color: -webkit-link;
-    cursor: pointer;
-    text-decoration: underline;
-}
-.text-white {
-    color: #fafafa !important;
-}
-.text-white {
-    color: #fff !important;
-}
-@media (min-width: 768px) {
-    .text-md-left {
-        text-align: left !important;
-    }
-}
-// .text-center {
-//     text-align: center !important;
-// }
-.owl-carousel.owl-drag .owl-item {
-    touch-action: pan-y;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-}
 .owl-carousel .owl-item {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
     float: left;
     min-height: 1px;
     position: relative;
 }
-// .owl-carousel {
-//     -webkit-tap-highlight-color: transparent;
-//     display: none;
-//     position: relative;
-//     width: 100%;
-//     z-index: 1;
-// }
-.banner-section {
-    background-color: #ffffff;
-    color: #fff;
-}
-body {
-    background-color: #fff;
-    color: #1d202f;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.3;
-}
-body {
-    color: #212529;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 0;
-    text-align: left;
-}
-:root {
-    --blue: #007bff;
-    --indigo: #6610f2;
-    --purple: #6f42c1;
-    --pink: #e83e8c;
-    --red: #dc3545;
-    --orange: #fd7e14;
-    --yellow: #ffc107;
-    --green: #28a745;
-    --teal: #20c997;
-    --cyan: #17a2b8;
-    --white: #fff;
-    --gray: #6c757d;
-    --gray-dark: #343a40;
-    --primary: #007bff;
-    --secondary: #6c757d;
-    --success: #28a745;
-    --info: #17a2b8;
-    --warning: #ffc107;
-    --danger: #dc3545;
-    --light: #f8f9fa;
-    --dark: #343a40;
-    --breakpoint-xs: 0;
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
-    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-html {
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    font-family: sans-serif;
-    line-height: 1.15;
-}
-*, :after, :before {
-    box-sizing: border-box;
-}
-*, :after, :before {
-    box-sizing: border-box;
-}
 
-
+/* Owl Navigation Buttons */
 .owl-nav button {
     position: absolute;
     top: 50%;
-    background-color: #000;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.38);
     color: #fff;
     margin: 0;
     transition: all 0.3s ease-in-out;
-  }
-  .owl-nav button.owl-prev {
+}
+
+.owl-nav button.owl-prev {
     left: 0;
-  }
-  .owl-nav button.owl-next {
+}
+
+.owl-nav button.owl-next {
     right: 0;
-  }
-  
-  .owl-dots {
+}
+
+/* Owl Dots */
+.owl-dots {
     text-align: center;
     padding-top: 15px;
-  }
-  .owl-dots button.owl-dot {
+}
+
+.owl-dots button.owl-dot {
     width: 15px;
     height: 15px;
     border-radius: 50%;
     display: inline-block;
     background: #ccc;
     margin: 0 3px;
-  }
-  .owl-dots button.owl-dot.active {
+}
+
+.owl-dots button.owl-dot.active {
     background-color: #000;
-  }
-  .owl-dots button.owl-dot:focus {
+}
+
+.owl-dots button.owl-dot:focus {
     outline: none;
-  }
-  .owl-nav button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.38) !important;
-  }
-  span {
-      font-size: 70px;    
-      position: relative;
-      top: -5px;
-  }
-  .owl-nav button:focus {
-      outline: none;
-  }
+}
+
+/* Banner section styling */
+.banner-section {
+    background-color: #ffffff;
+    color: #fff;
+}
+
+.section-image {
+    padding: 10%;
+}
+
+.text-padding {
+    padding-left: 10%;
+}
+
+.custom-container-who-we-are {
+    margin-top:10%;
+    margin-bottom:10%;
+    background: #f2f2f2; 
+}
+
+#contact {
+ margin-top:10%;
+}
+
+
+.subscribe-section {
+    position: relative;
+}
+
+.subscribe-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.subscribe-form-section {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    z-index: 9;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.subscribe-form-section.d-block {
+    opacity: 1;
+}
+
+.subscribe-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.subscribe-header-title {
+    display: flex;
+    align-items: center;
+    color: #333;
+}
+
+.subscribe-header-title i {
+    margin-right: 5px;
+}
+
+.close-subscribe-form-button {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.subscribe-form-body {
+    .btn-subscribe {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px;
+        cursor: pointer;
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+    .help-block {
+        font-size: 14px;
+    }
+}
+
+
+.footer-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.footer-line {
+    border: 0;
+    border-top: 1px solid #dee2e6;
+    margin-bottom: 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-contact {
+    margin-right: auto;
+}
+
+.footer-contact-icon img {
+    max-width: 100px;
+}
+
+.footer-policies {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.footer-policy-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-policy-link:hover {
+    text-decoration: underline;
+}
+
+.footer-partners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-partner-logo img {
+    max-width: 100px;
+}
+
+.footer-partner-text {
+    font-weight: bold;
+}
+
+.footer-partner-logos {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-social-icon {
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-social-icon:hover {
+    color: #007bff;
+}
+
+.footer-copyright {
+    text-align: right;
+}
+
+.footer-copyright p {
+    margin: 0;
+    color: #333;
+}
+
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .text-md-left {
+        text-align: left !important;
+    }
+}
+
+// Remove commented-out styles and adjust as needed
+
+/* Ensure no overflow issues with fixed widths */
+.partner-logo img {
+    max-width: 100%;
+    /* Prevent images from overflowing their container */
+}
+
+.footer-center-container,
+.footer-right-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Adjust alignment if needed */
+}
+
+/* Ensure proper styling for elements */
+.shadow-btn {
+    padding: 10px 50px;
+    /* Adjust if necessary */
+}
